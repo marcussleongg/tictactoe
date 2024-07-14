@@ -212,6 +212,10 @@ function playGame() {
         makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
         //switch between the two players if a valid choice is made
         if (validChoice == true) {
+            //add the symbol to the dom
+            let symbol = document.createElement('p');
+            symbol.textContent = roundPlayer.playerSymbol; 
+            zerozero.appendChild(symbol);
             if (roundPlayer === playerOne) {
                 roundPlayer = playerTwo;
             } else {
@@ -225,6 +229,9 @@ function playGame() {
         let choiceCol = 1;
         makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
         if (validChoice == true) {
+            let symbol = document.createElement('p');
+            symbol.textContent = roundPlayer.playerSymbol; 
+            zeroone.appendChild(symbol);
             if (roundPlayer === playerOne) {
                 roundPlayer = playerTwo;
             } else {
@@ -238,6 +245,9 @@ function playGame() {
         let choiceCol = 2;
         makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
         if (validChoice == true) {
+            let symbol = document.createElement('p');
+            symbol.textContent = roundPlayer.playerSymbol; 
+            zerotwo.appendChild(symbol);
             if (roundPlayer === playerOne) {
                 roundPlayer = playerTwo;
             } else {
@@ -251,6 +261,9 @@ function playGame() {
         let choiceCol = 0;
         makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
         if (validChoice == true) {
+            let symbol = document.createElement('p');
+            symbol.textContent = roundPlayer.playerSymbol; 
+            onezero.appendChild(symbol);
             if (roundPlayer === playerOne) {
                 roundPlayer = playerTwo;
             } else {
@@ -264,6 +277,9 @@ function playGame() {
         let choiceCol = 1;
         makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
         if (validChoice == true) {
+            let symbol = document.createElement('p');
+            symbol.textContent = roundPlayer.playerSymbol; 
+            oneone.appendChild(symbol);
             if (roundPlayer === playerOne) {
                 roundPlayer = playerTwo;
             } else {
@@ -277,6 +293,9 @@ function playGame() {
         let choiceCol = 2;
         makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
         if (validChoice == true) {
+            let symbol = document.createElement('p');
+            symbol.textContent = roundPlayer.playerSymbol; 
+            onetwo.appendChild(symbol);
             if (roundPlayer === playerOne) {
                 roundPlayer = playerTwo;
             } else {
@@ -290,6 +309,9 @@ function playGame() {
         let choiceCol = 0;
         makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
         if (validChoice == true) {
+            let symbol = document.createElement('p');
+            symbol.textContent = roundPlayer.playerSymbol; 
+            twozero.appendChild(symbol);
             if (roundPlayer === playerOne) {
                 roundPlayer = playerTwo;
             } else {
@@ -303,6 +325,9 @@ function playGame() {
         let choiceCol = 1;
         makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
         if (validChoice == true) {
+            let symbol = document.createElement('p');
+            symbol.textContent = roundPlayer.playerSymbol; 
+            twoone.appendChild(symbol);
             if (roundPlayer === playerOne) {
                 roundPlayer = playerTwo;
             } else {
@@ -312,10 +337,13 @@ function playGame() {
     });
     const twotwo = document.querySelector('#twotwo');
     twotwo.addEventListener('click', () => {
-        let choiceRow = 1;
-        let choiceCol = 0;
+        let choiceRow = 2;
+        let choiceCol = 2;
         makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
         if (validChoice == true) {
+            let symbol = document.createElement('p');
+            symbol.textContent = roundPlayer.playerSymbol; 
+            twotwo.appendChild(symbol);
             if (roundPlayer === playerOne) {
                 roundPlayer = playerTwo;
             } else {

@@ -26,8 +26,16 @@ body {
     height: 200px;
     background-color: black;
     border: 10px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #zerozero {
     height: 100%;
+}
+
+.square p {
+    color: white;
+    font-size: 5em;
 }
