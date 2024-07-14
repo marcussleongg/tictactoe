@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    display: grid;
+    grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    border: 10px solid red;
+}
+
+#zerozero {
+    height: 100%;
+}
