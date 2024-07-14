@@ -28,18 +28,20 @@ const createBoard = (function() {
 }
 })();
 let gameWon = false;
+let validChoice = false;
 //append gameboard with player's symbol based on their choice
 
 function makeChoice(player, squareRow, squareCol) {
     console.log(squareRow);
     console.log(squareCol);
-    console.log(typeof squareRow);
-    console.log(typeof squareCol);
-    console.log(board)
+    console.log(board);
+    validChoice = false;
     let chosenSquare = board[squareRow][squareCol];
     //check if the chosen square is empty
     if (chosenSquare.length === 0) {
         chosenSquare.push(player.playerSymbol);
+        console.log(player.playerName);
+        validChoice = true;
         //check for result
         if (squareCol === 0 && squareRow === 0) {
             if (board[squareRow][squareCol + 1] == player.playerSymbol) {
@@ -202,18 +204,126 @@ function playGame() {
     const playerTwo = createPlayer(nameOfSecond, symbolOfSecond);
     board = createBoard();
     let roundPlayer = playerOne;
-    while (gameWon == false) {
-        console.log(roundPlayer.playerName);
-        let choiceRow = prompt("row?");
-        let choiceCol = prompt("column?");
+    console.log(roundPlayer.playerName);
+    const zerozero = document.querySelector('#zerozero');
+    zerozero.addEventListener('click', () => {
+        let choiceRow = 0;
+        let choiceCol = 0;
         makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
-        //switch between the two players
-        if (roundPlayer === playerOne) {
-            roundPlayer = playerTwo;
-        } else {
-            roundPlayer = playerOne;
+        //switch between the two players if a valid choice is made
+        if (validChoice == true) {
+            if (roundPlayer === playerOne) {
+                roundPlayer = playerTwo;
+            } else {
+                roundPlayer = playerOne;
+            }
         }
-    }
+    });
+    const zeroone = document.querySelector('#zeroone');
+    zeroone.addEventListener('click', () => {
+        let choiceRow = 0;
+        let choiceCol = 1;
+        makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
+        if (validChoice == true) {
+            if (roundPlayer === playerOne) {
+                roundPlayer = playerTwo;
+            } else {
+                roundPlayer = playerOne;
+            }
+        }
+    });
+    const zerotwo = document.querySelector('#zerotwo');
+    zerotwo.addEventListener('click', () => {
+        let choiceRow = 0;
+        let choiceCol = 2;
+        makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
+        if (validChoice == true) {
+            if (roundPlayer === playerOne) {
+                roundPlayer = playerTwo;
+            } else {
+                roundPlayer = playerOne;
+            }
+        }
+    });
+    const onezero = document.querySelector('#onezero');
+    onezero.addEventListener('click', () => {
+        let choiceRow = 1;
+        let choiceCol = 0;
+        makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
+        if (validChoice == true) {
+            if (roundPlayer === playerOne) {
+                roundPlayer = playerTwo;
+            } else {
+                roundPlayer = playerOne;
+            }
+        }
+    });
+    const oneone = document.querySelector('#oneone');
+    oneone.addEventListener('click', () => {
+        let choiceRow = 1;
+        let choiceCol = 1;
+        makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
+        if (validChoice == true) {
+            if (roundPlayer === playerOne) {
+                roundPlayer = playerTwo;
+            } else {
+                roundPlayer = playerOne;
+            }
+        }
+    });
+    const onetwo = document.querySelector('#onetwo');
+    onetwo.addEventListener('click', () => {
+        let choiceRow = 1;
+        let choiceCol = 2;
+        makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
+        if (validChoice == true) {
+            if (roundPlayer === playerOne) {
+                roundPlayer = playerTwo;
+            } else {
+                roundPlayer = playerOne;
+            }
+        }
+    });
+    const twozero = document.querySelector('#twozero');
+    twozero.addEventListener('click', () => {
+        let choiceRow = 2;
+        let choiceCol = 0;
+        makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
+        if (validChoice == true) {
+            if (roundPlayer === playerOne) {
+                roundPlayer = playerTwo;
+            } else {
+                roundPlayer = playerOne;
+            }
+        }
+    });
+    const twoone = document.querySelector('#twoone');
+    twoone.addEventListener('click', () => {
+        let choiceRow = 2;
+        let choiceCol = 1;
+        makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
+        if (validChoice == true) {
+            if (roundPlayer === playerOne) {
+                roundPlayer = playerTwo;
+            } else {
+                roundPlayer = playerOne;
+            }
+        }
+    });
+    const twotwo = document.querySelector('#twotwo');
+    twotwo.addEventListener('click', () => {
+        let choiceRow = 1;
+        let choiceCol = 0;
+        makeChoice(roundPlayer, Number(choiceRow), Number(choiceCol));
+        if (validChoice == true) {
+            if (roundPlayer === playerOne) {
+                roundPlayer = playerTwo;
+            } else {
+                roundPlayer = playerOne;
+            }
+        }
+    });
 }
 
 playGame();
+
