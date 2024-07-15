@@ -144,6 +144,7 @@ function makeChoice(player, squareRow, squareCol) {
 
 const displayPlayerOne = document.querySelector('.playerOne');
 const displayPlayerTwo = document.querySelector('.playerTwo');
+const setPlayersDialog = document.querySelector('.setPlayers');
 
 //function for game to play
 function playGame() {
@@ -151,7 +152,6 @@ function playGame() {
     let playerOne;
     let playerTwo;
     //function for modal appearing and buttons
-    const setPlayersDialog = document.querySelector('.setPlayers');
     setPlayersDialog.showModal();
     const startGameBtn = document.querySelector('#start');
     startGameBtn.addEventListener('click', (event) => {
@@ -353,7 +353,8 @@ resetPlayersBtn.addEventListener('click', () => {
             square.firstChild.remove();
         }
     };
+    board = createBoard();
     winDialog.close();
     form.reset();
-    playGame();
+    setPlayersDialog.showModal();
 })
