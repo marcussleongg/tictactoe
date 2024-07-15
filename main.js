@@ -37,6 +37,8 @@ function makeChoice(player, squareRow, squareCol) {
     console.log(board);
     validChoice = false;
     let chosenSquare = board[squareRow][squareCol];
+    const winDialog = document.querySelector('.winPopUp');
+    const winMessage = document.querySelector('#playerWin');
     //check if the chosen square is empty
     if (chosenSquare.length === 0) {
         chosenSquare.push(player.playerSymbol);
@@ -45,94 +47,94 @@ function makeChoice(player, squareRow, squareCol) {
         //check for result
         if (squareCol === 0 && squareRow === 0) {
             if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol + 2] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow + 1][squareCol] == player.playerSymbol && board[squareRow + 2][squareCol] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow + 1][squareCol + 1] == player.playerSymbol && board[squareRow + 2][squareCol + 2] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             }
         } else if (squareCol === 1 && squareRow === 0) {
             if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol - 1] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow + 1][squareCol] == player.playerSymbol && board[squareRow + 2][squareCol] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             }
         } else if (squareCol === 2 && squareRow === 0) {
             console.log('okay checking');
             if (board[squareRow][squareCol - 1] == player.playerSymbol && board[squareRow][squareCol - 2] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow + 1][squareCol] == player.playerSymbol && board[squareRow + 2][squareCol] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow + 1][squareCol - 1] == player.playerSymbol && board[squareRow + 2][squareCol - 2] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             }
         } else if (squareCol === 0 && squareRow === 1) {
             if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol + 2] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow + 1][squareCol] == player.playerSymbol && board[squareRow - 1][squareCol] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             }
         } else if (squareCol === 1 && squareRow === 1) {
             if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol - 1] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow + 1][squareCol] == player.playerSymbol && board[squareRow - 1][squareCol] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow + 1][squareCol + 1] == player.playerSymbol && board[squareRow - 1][squareCol - 1] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow + 1][squareCol - 1] == player.playerSymbol && board[squareRow - 1][squareCol + 1] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             }
         } else if (squareCol === 2 && squareRow === 1 && board[squareRow][squareCol - 2] == player.playerSymbol) {
             if (board[squareRow][squareCol - 1] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow + 1][squareCol] == player.playerSymbol && board[squareRow - 1][squareCol] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             }
         } else if (squareCol === 0 && squareRow === 2) {
             if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol + 2] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow - 1][squareCol] == player.playerSymbol && board[squareRow - 2][squareCol] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow - 1][squareCol + 1] == player.playerSymbol && board[squareRow - 2][squareCol + 2] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             }
         } else if (squareCol === 1 && squareRow === 2) {
             if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol - 1] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow - 1][squareCol] == player.playerSymbol && board[squareRow - 2][squareCol] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             }
         } else if (squareCol === 2 && squareRow === 2) {
             if (board[squareRow][squareCol - 1] == player.playerSymbol && board[squareRow][squareCol - 2] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow - 1][squareCol] == player.playerSymbol && board[squareRow - 2][squareCol] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             } else if (board[squareRow - 1][squareCol - 1] == player.playerSymbol && board[squareRow - 2][squareCol - 2] == player.playerSymbol) {
-                    setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
-                    return gameWon = true;
+                    winMessage.textContent = `The winner is ${player.playerName}`;
+                    winDialog.showModal();
             }
         }
     } else {
