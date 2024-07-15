@@ -142,6 +142,9 @@ function makeChoice(player, squareRow, squareCol) {
     }
 }
 
+const displayPlayerOne = document.querySelector('.playerOne');
+const displayPlayerTwo = document.querySelector('.playerTwo');
+
 //function for game to play
 function playGame() {
     let roundPlayer;
@@ -157,13 +160,11 @@ function playGame() {
         let symbolOfFirst = document.getElementById('playerOneSymbol').value;
         let nameOfSecond = document.getElementById('playerTwoName').value;
         let symbolOfSecond = document.getElementById('playerTwoSymbol').value;
-        const displayPlayerOne = document.querySelector('.playerOne');
         let nameOfFirstElem = document.createElement('p');
         nameOfFirstElem.textContent = nameOfFirst;
         let symbolOfFirstElem = document.createElement('p');
         symbolOfFirstElem.textContent = symbolOfFirst;
         displayPlayerOne.appendChild(nameOfFirstElem).appendChild(symbolOfFirstElem);
-        const displayPlayerTwo = document.querySelector('.playerTwo');
         let nameOfSecondElem = document.createElement('p');
         nameOfSecondElem.textContent = nameOfSecond;
         let symbolOfSecondElem = document.createElement('p');
@@ -330,12 +331,29 @@ playGame();
 const newRoundBtn = document.querySelector('#newRound');
 const resetPlayersBtn = document.querySelector('#resetPlayers');
 const allSquares = document.querySelectorAll('.square');
+const form = document.querySelector('form');
 newRoundBtn.addEventListener('click', () => {
     for (square of allSquares) {
         if (square.firstChild !== null) {
             square.firstChild.remove();
         }
-    }
+    };
     board = createBoard();
     winDialog.close();
+});
+resetPlayersBtn.addEventListener('click', () => {
+    if (displayPlayerOne.firstChild !== null) {
+        displayPlayerOne.firstChild.remove();
+    };
+    if (displayPlayerTwo.firstChild !== null) {
+        displayPlayerTwo.firstChild.remove();
+    };
+    for (square of allSquares) {
+        if (square.firstChild !== null) {
+            square.firstChild.remove();
+        }
+    };
+    winDialog.close();
+    form.reset();
+    playGame();
 })
