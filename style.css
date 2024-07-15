@@ -10,15 +10,27 @@ html, body {
 
 body {
     min-height: 100vh;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    grid: 1fr / 1fr 2fr 1fr;
 }
 
 .board {
     display: grid;
     grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
     gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerOne, .playerTwo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 5em;
 }
 
 .square {
