@@ -29,6 +29,8 @@ const createBoard = (function() {
 })();
 let gameWon = false;
 let validChoice = false;
+const winDialog = document.querySelector('.winPopUp');
+const winMessage = document.querySelector('#playerWin');
 //append gameboard with player's symbol based on their choice
 
 function makeChoice(player, squareRow, squareCol) {
@@ -37,8 +39,6 @@ function makeChoice(player, squareRow, squareCol) {
     console.log(board);
     validChoice = false;
     let chosenSquare = board[squareRow][squareCol];
-    const winDialog = document.querySelector('.winPopUp');
-    const winMessage = document.querySelector('#playerWin');
     //check if the chosen square is empty
     if (chosenSquare.length === 0) {
         chosenSquare.push(player.playerSymbol);
@@ -322,7 +322,20 @@ function playGame() {
             }
         }
     });
+
 }
 
 playGame();
 
+const newRoundBtn = document.querySelector('#newRound');
+const resetPlayersBtn = document.querySelector('#resetPlayers');
+const allSquares = document.querySelectorAll('.square');
+newRoundBtn.addEventListener('click', () => {
+    for (square of allSquares) {
+        if (square.firstChild !== null) {
+            square.firstChild.remove();
+        }
+    }
+    board = createBoard();
+    winDialog.close();
+})
