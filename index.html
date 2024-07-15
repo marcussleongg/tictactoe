@@ -22,21 +22,25 @@
     <div class="playerTwo"></div>
     <dialog class="setPlayers">
         <form>
-            <label for="playerOneName">Player One's Name</label>
+            <div id="p1">Player One</div>
+            <label for="playerOneName">Name:</label>
             <input type="text" id="playerOneName" />
-            <label for="playerOneSymbol">Player One's Symbol</label>
+            <label for="playerOneSymbol">Symbol:</label>
             <input type="text" id="playerOneSymbol" maxlength="1" />
-            <label for="playerTwoName">Player Two's Name</label>
+            <div id="p2">Player Two</div>
+            <label for="playerTwoName">Name:</label>
             <input type="text" id="playerTwoName" />
-            <label for="playerTwoSymbol">Player Two's Symbol</label>
+            <label for="playerTwoSymbol">Symbol:</label>
             <input type="text" id="playerTwoSymbol" maxlength="1" />
             <button type="submit" id="start">Start Game</button>
         </form>
     </dialog>
     <dialog class="winPopUp">
         <div id="playerWin"></div>
-        <button id="newRound">New Round</button>
-        <button id="resetPlayers">Reset Players</button>
+        <div id="buttons">
+            <button id="newRound">New Round</button>
+            <button id="resetPlayers">Reset Players</button>
+        </div>
     </dialog>
     <script src="main.js" defer></script>
 </body>
