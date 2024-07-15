@@ -189,27 +189,38 @@ function makeChoice(player, squareRow, squareCol) {
 
 //function for game to play
 function playGame() {
-    let nameOfFirst = prompt("First player's name?");
-    let symbolOfFirst = prompt("First player's symbol?");
-    const displayPlayerOne = document.querySelector('.playerOne');
-    let nameOfFirstElem = document.createElement('p');
-    nameOfFirstElem.textContent = nameOfFirst;
-    let symbolOfFirstElem = document.createElement('p');
-    symbolOfFirstElem.textContent = symbolOfFirst;
-    displayPlayerOne.appendChild(nameOfFirstElem).appendChild(symbolOfFirstElem);
-    let nameOfSecond = prompt("Second player's name?");
-    let symbolOfSecond = prompt("Second player's symbol?");
-    const displayPlayerTwo = document.querySelector('.playerTwo');
-    let nameOfSecondElem = document.createElement('p');
-    nameOfSecondElem.textContent = nameOfSecond;
-    let symbolOfSecondElem = document.createElement('p');
-    symbolOfSecondElem.textContent = symbolOfSecond;
-    displayPlayerTwo.appendChild(nameOfSecondElem).appendChild(symbolOfSecondElem);
-    const playerOne = createPlayer(nameOfFirst, symbolOfFirst);
-    const playerTwo = createPlayer(nameOfSecond, symbolOfSecond);
-    board = createBoard();
-    let roundPlayer = playerOne;
-    console.log(roundPlayer.playerName);
+    let roundPlayer;
+    let playerOne;
+    let playerTwo;
+    //function for modal appearing and buttons
+    const setPlayersDialog = document.querySelector('.setPlayers');
+    setPlayersDialog.showModal();
+    const startGameBtn = document.querySelector('#start');
+    startGameBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        let nameOfFirst = document.getElementById('playerOneName').value;
+        let symbolOfFirst = document.getElementById('playerOneSymbol').value;
+        let nameOfSecond = document.getElementById('playerTwoName').value;
+        let symbolOfSecond = document.getElementById('playerTwoSymbol').value;
+        const displayPlayerOne = document.querySelector('.playerOne');
+        let nameOfFirstElem = document.createElement('p');
+        nameOfFirstElem.textContent = nameOfFirst;
+        let symbolOfFirstElem = document.createElement('p');
+        symbolOfFirstElem.textContent = symbolOfFirst;
+        displayPlayerOne.appendChild(nameOfFirstElem).appendChild(symbolOfFirstElem);
+        const displayPlayerTwo = document.querySelector('.playerTwo');
+        let nameOfSecondElem = document.createElement('p');
+        nameOfSecondElem.textContent = nameOfSecond;
+        let symbolOfSecondElem = document.createElement('p');
+        symbolOfSecondElem.textContent = symbolOfSecond;
+        displayPlayerTwo.appendChild(nameOfSecondElem).appendChild(symbolOfSecondElem);
+        playerOne = createPlayer(nameOfFirst, symbolOfFirst);
+        playerTwo = createPlayer(nameOfSecond, symbolOfSecond);
+        board = createBoard();
+        roundPlayer = playerOne;
+        setPlayersDialog.close();
+    })
+    //console.log(roundPlayer.playerName);
     const zerozero = document.querySelector('#zerozero');
     zerozero.addEventListener('click', () => {
         let choiceRow = 0;
