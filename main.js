@@ -44,6 +44,20 @@ function makeChoice(player, squareRow, squareCol) {
         chosenSquare.push(player.playerSymbol);
         console.log(player.playerName);
         validChoice = true;
+        //check if all other squares have already been filled, which means the game is a draw
+        let draw = true;
+        for (row of board) {
+            for (column of row) {
+                if(column.length == 0) {
+                    draw = false;
+                }
+            }
+        }
+        console.log(draw);
+        if (draw == true) {
+            winMessage.textContent = `Draw. There is no winner.`;
+            winDialog.showModal();
+        }
         //check for result
         if (squareCol === 0 && squareRow === 0) {
             if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol + 2] == player.playerSymbol) {
