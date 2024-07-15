@@ -44,142 +44,95 @@ function makeChoice(player, squareRow, squareCol) {
         validChoice = true;
         //check for result
         if (squareCol === 0 && squareRow === 0) {
-            if (board[squareRow][squareCol + 1] == player.playerSymbol) {
-                if (board[squareRow][squareCol + 2] == player.playerSymbol) {
+            if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol + 2] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow + 1][squareCol] == player.playerSymbol) {
-                if (board[squareRow + 2][squareCol] == player.playerSymbol) {
+            } else if (board[squareRow + 1][squareCol] == player.playerSymbol && board[squareRow + 2][squareCol] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow + 1][squareCol + 1] == player.playerSymbol) {
-                if (board[squareRow + 2][squareCol + 2] == player.playerSymbol) {
+            } else if (board[squareRow + 1][squareCol + 1] == player.playerSymbol && board[squareRow + 2][squareCol + 2] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
             }
         } else if (squareCol === 1 && squareRow === 0) {
-            if (board[squareRow][squareCol + 1] == player.playerSymbol) {
-                if (board[squareRow][squareCol - 1] == player.playerSymbol) {
+            if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol - 1] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow + 1][squareCol] == player.playerSymbol) {
-                if (board[squareRow + 2][squareCol] == player.playerSymbol) {
+            } else if (board[squareRow + 1][squareCol] == player.playerSymbol && board[squareRow + 2][squareCol] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
             }
         } else if (squareCol === 2 && squareRow === 0) {
-            if (board[squareRow][squareCol - 1] == player.playerSymbol) {
-                if (board[squareRow][squareCol - 2] == player.playerSymbol) {
+            console.log('okay checking');
+            if (board[squareRow][squareCol - 1] == player.playerSymbol && board[squareRow][squareCol - 2] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow + 1][squareCol] == player.playerSymbol) {
-                if (board[squareRow + 2][squareCol] == player.playerSymbol) {
+            } else if (board[squareRow + 1][squareCol] == player.playerSymbol && board[squareRow + 2][squareCol] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow + 1][squareCol - 1] == player.playerSymbol) {
-                if (board[squareRow + 2][squareCol - 2] == player.playerSymbol) {
+            } else if (board[squareRow + 1][squareCol - 1] == player.playerSymbol && board[squareRow + 2][squareCol - 2] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
             }
         } else if (squareCol === 0 && squareRow === 1) {
-            if (board[squareRow][squareCol + 1] == player.playerSymbol) {
-                if (board[squareRow][squareCol + 2] == player.playerSymbol) {
+            if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol + 2] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow + 1][squareCol] == player.playerSymbol) {
-                if (board[squareRow - 1][squareCol] == player.playerSymbol) {
+            } else if (board[squareRow + 1][squareCol] == player.playerSymbol && board[squareRow - 1][squareCol] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
             }
         } else if (squareCol === 1 && squareRow === 1) {
-            if (board[squareRow][squareCol + 1] == player.playerSymbol) {
-                if (board[squareRow][squareCol - 1] == player.playerSymbol) {
+            if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol - 1] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow + 1][squareCol] == player.playerSymbol) {
-                if (board[squareRow - 1][squareCol] == player.playerSymbol) {
+            } else if (board[squareRow + 1][squareCol] == player.playerSymbol && board[squareRow - 1][squareCol] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow + 1][squareCol + 1] == player.playerSymbol) {
-                if (board[squareRow - 1][squareCol - 1] == player.playerSymbol) {
+            } else if (board[squareRow + 1][squareCol + 1] == player.playerSymbol && board[squareRow - 1][squareCol - 1] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow + 1][squareCol - 1] == player.playerSymbol) {
-                if (board[squareRow - 1][squareCol + 1] == player.playerSymbol) {
+            } else if (board[squareRow + 1][squareCol - 1] == player.playerSymbol && board[squareRow - 1][squareCol + 1] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
             }
-        } else if (squareCol === 2 && squareRow === 1) {
+        } else if (squareCol === 2 && squareRow === 1 && board[squareRow][squareCol - 2] == player.playerSymbol) {
             if (board[squareRow][squareCol - 1] == player.playerSymbol) {
-                if (board[squareRow][squareCol - 2] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow + 1][squareCol] == player.playerSymbol) {
-                if (board[squareRow - 1][squareCol] == player.playerSymbol) {
+            } else if (board[squareRow + 1][squareCol] == player.playerSymbol && board[squareRow - 1][squareCol] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
             }
         } else if (squareCol === 0 && squareRow === 2) {
-            if (board[squareRow][squareCol + 1] == player.playerSymbol) {
-                if (board[squareRow][squareCol + 2] == player.playerSymbol) {
+            if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol + 2] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow - 1][squareCol] == player.playerSymbol) {
-                if (board[squareRow - 2][squareCol] == player.playerSymbol) {
+            } else if (board[squareRow - 1][squareCol] == player.playerSymbol && board[squareRow - 2][squareCol] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow - 1][squareCol + 1] == player.playerSymbol) {
-                if (board[squareRow - 2][squareCol + 2] == player.playerSymbol) {
+            } else if (board[squareRow - 1][squareCol + 1] == player.playerSymbol && board[squareRow - 2][squareCol + 2] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
             }
         } else if (squareCol === 1 && squareRow === 2) {
-            if (board[squareRow][squareCol + 1] == player.playerSymbol) {
-                if (board[squareRow][squareCol - 1] == player.playerSymbol) {
+            if (board[squareRow][squareCol + 1] == player.playerSymbol && board[squareRow][squareCol - 1] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow - 1][squareCol] == player.playerSymbol) {
-                if (board[squareRow - 2][squareCol] == player.playerSymbol) {
+            } else if (board[squareRow - 1][squareCol] == player.playerSymbol && board[squareRow - 2][squareCol] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
             }
         } else if (squareCol === 2 && squareRow === 2) {
-            if (board[squareRow][squareCol - 1] == player.playerSymbol) {
-                if (board[squareRow][squareCol - 2] == player.playerSymbol) {
+            if (board[squareRow][squareCol - 1] == player.playerSymbol && board[squareRow][squareCol - 2] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow - 1][squareCol] == player.playerSymbol) {
-                if (board[squareRow - 2][squareCol] == player.playerSymbol) {
+            } else if (board[squareRow - 1][squareCol] == player.playerSymbol && board[squareRow - 2][squareCol] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
-            } else if (board[squareRow - 1][squareCol - 1] == player.playerSymbol) {
-                if (board[squareRow - 2][squareCol - 2] == player.playerSymbol) {
+            } else if (board[squareRow - 1][squareCol - 1] == player.playerSymbol && board[squareRow - 2][squareCol - 2] == player.playerSymbol) {
                     setTimeout(()=>{alert(`The winner is ${player.playerName}`);}, 5);
                     return gameWon = true;
-                }
             }
         }
     } else {
