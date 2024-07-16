@@ -477,6 +477,8 @@ newRoundBtn.addEventListener('click', () => {
         }
     };
     board = createBoard();
+    displayPlayerOne.style.color = "black";
+    displayPlayerTwo.style.color = "black";
     winDialog.close();
 });
 resetPlayersBtn.addEventListener('click', () => {
@@ -492,6 +494,8 @@ resetPlayersBtn.addEventListener('click', () => {
         }
     };
     board = createBoard();
+    displayPlayerOne.style.color = "black";
+    displayPlayerTwo.style.color = "black";
     winDialog.close();
     form.reset();
     setPlayersDialog.showModal();
