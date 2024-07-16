@@ -34,15 +34,15 @@ const winMessage = document.querySelector('#playerWin');
 //append gameboard with player's symbol based on their choice
 
 function makeChoice(player, squareRow, squareCol) {
-    console.log(squareRow);
-    console.log(squareCol);
-    console.log(board);
+    //console.log(squareRow);
+    //console.log(squareCol);
+    //console.log(board);
     validChoice = false;
     let chosenSquare = board[squareRow][squareCol];
     //check if the chosen square is empty
     if (chosenSquare.length === 0) {
         chosenSquare.push(player.playerSymbol);
-        console.log(player.playerName);
+        //console.log(player.playerName);
         validChoice = true;
         //check if all other squares have already been filled, which means the game is a draw
         let draw = true;
@@ -53,7 +53,7 @@ function makeChoice(player, squareRow, squareCol) {
                 }
             }
         }
-        console.log(draw);
+        //console.log(draw);
         if (draw == true) {
             winMessage.textContent = `Draw. There is no winner.`;
             winDialog.showModal();
@@ -104,7 +104,7 @@ function makeChoice(player, squareRow, squareCol) {
                     };
             }
         } else if (squareCol === 2 && squareRow === 0) {
-            console.log('okay checking');
+            //console.log('okay checking');
             if (board[squareRow][squareCol - 1] == player.playerSymbol && board[squareRow][squareCol - 2] == player.playerSymbol) {
                     winMessage.textContent = `The winner is ${player.playerName}`;
                     winDialog.showModal();
