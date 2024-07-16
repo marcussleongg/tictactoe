@@ -66,13 +66,23 @@ body {
     padding: 3em 5em;
 }
 
+form input {
+    height: 1.5em;
+    font-size: 1.5em;
+    padding-left: 0.2em;
+}
+
+form label {
+    font-size: 1.5em;
+}
+
 #p1 {
     grid-area: 1 / 1 / 2 / 5;
     justify-self: center;
     font-weight: bold;
     position: relative;
     top: 1em;
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 #p2 {
@@ -81,7 +91,7 @@ body {
     font-weight: bold;
     position: relative;
     top: 1em;
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 #start {
@@ -98,6 +108,13 @@ body {
     align-self: center;
     padding: 5em;
     padding-bottom: 7em;
+    justify-content: center;
+    align-items: center;
+}
+
+#containing {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -121,4 +138,5 @@ body {
     font-size: 1.3em;
     border-radius: 1.5em;
     padding: 1.5em;
+    box-shadow: 1em black;
 }

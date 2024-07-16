@@ -174,21 +174,25 @@ function playGame() {
         let symbolOfFirst = document.getElementById('playerOneSymbol').value;
         let nameOfSecond = document.getElementById('playerTwoName').value;
         let symbolOfSecond = document.getElementById('playerTwoSymbol').value;
-        let nameOfFirstElem = document.createElement('p');
-        nameOfFirstElem.textContent = nameOfFirst;
-        let symbolOfFirstElem = document.createElement('p');
-        symbolOfFirstElem.textContent = symbolOfFirst;
-        displayPlayerOne.appendChild(nameOfFirstElem).appendChild(symbolOfFirstElem);
-        let nameOfSecondElem = document.createElement('p');
-        nameOfSecondElem.textContent = nameOfSecond;
-        let symbolOfSecondElem = document.createElement('p');
-        symbolOfSecondElem.textContent = symbolOfSecond;
-        displayPlayerTwo.appendChild(nameOfSecondElem).appendChild(symbolOfSecondElem);
-        playerOne = createPlayer(nameOfFirst, symbolOfFirst);
-        playerTwo = createPlayer(nameOfSecond, symbolOfSecond);
-        board = createBoard();
-        roundPlayer = playerOne;
-        setPlayersDialog.close();
+        if (symbolOfFirst == symbolOfSecond) {
+            alert('The symbols for both players cannot be the same!');
+        } else {
+            let nameOfFirstElem = document.createElement('p');
+            nameOfFirstElem.textContent = nameOfFirst;
+            let symbolOfFirstElem = document.createElement('p');
+            symbolOfFirstElem.textContent = symbolOfFirst;
+            displayPlayerOne.appendChild(nameOfFirstElem).appendChild(symbolOfFirstElem);
+            let nameOfSecondElem = document.createElement('p');
+            nameOfSecondElem.textContent = nameOfSecond;
+            let symbolOfSecondElem = document.createElement('p');
+            symbolOfSecondElem.textContent = symbolOfSecond;
+            displayPlayerTwo.appendChild(nameOfSecondElem).appendChild(symbolOfSecondElem);
+            playerOne = createPlayer(nameOfFirst, symbolOfFirst);
+            playerTwo = createPlayer(nameOfSecond, symbolOfSecond);
+            board = createBoard();
+            roundPlayer = playerOne;
+            setPlayersDialog.close();
+        }
     })
     //console.log(roundPlayer.playerName);
     const zerozero = document.querySelector('#zerozero');
